@@ -136,10 +136,10 @@ async def count_people(request: PersonCountRequest):
     })
 ```
 ## Document
-อีกหนึ่งจุดเด่นของ FastAPI ก็คือมี Interactive API docs ที่นำ Swagger UI เข้ามาจัดการให้ โดยไปที่ [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+อีกหนึ่งจุดเด่นของ FastAPI ก็คือมี Interactive API docs ที่นำ Swagger UI เข้ามาจัดการให้ โดยไปที่ http://127.0.0.1:8000/docs
 
-## ทดสอบด้วย Posman
-ทำการทดสอบโดยการ POST call มาที่ http://127.0.0.1:8000/count_people และตั้งค่า body เป็น row
+## ทดสอบด้วย Postman
+ทำการทดสอบโดยการ POST call มาที่ http://127.0.0.1:8000/count_people และตั้งค่า body
 ```
 {
     "ip_address": "192.168.2.64",
