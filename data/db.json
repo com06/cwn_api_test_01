@@ -1,26 +1,110 @@
 [
   {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815192506",
-    "total_enter": 1,
-    "total_exit": 1,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
+    "timestamp": "20240815224343",
+    "@version": "2.0",
+    "@xmlns": "http://www.isapi.org/ver20/XMLSchema",
+    "ipAddress": "192.168.2.64",
+    "portNo": "8080",
+    "protocol": "HTTP",
+    "macAddress": "3c:1b:f8:c1:3a:6d",
+    "channelID": "1",
+    "dateTime": "2024-07-08T12:27:24+08:00",
+    "activePostCount": "1",
+    "eventType": "PeopleCounting",
+    "eventState": "active",
+    "eventDescription": "PeopleCounting alarm",
+    "channelName": "Camera 01",
+    "peopleCounting": {
+      "statisticalMethods": "realTime",
+      "RealTime": {
+        "time": "2024-07-08T12:27:24+08:00"
+      },
+      "enter": "15",
+      "exit": "10",
+      "duplicatePeople": "4",
+      "countingSceneMode": "entrance"
+    },
+    "isDataRetransmission": "false"
   },
   {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815192507",
-    "total_enter": 2,
-    "total_exit": 2,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
+    "timestamp": "20240815225257",
+    "@version": "2.0",
+    "@xmlns": "http://www.isapi.org/ver20/XMLSchema",
+    "ipAddress": "192.168.2.64",
+    "portNo": "8080",
+    "protocol": "HTTP",
+    "macAddress": "3c:1b:f8:c1:3a:6d",
+    "channelID": "1",
+    "dateTime": "2024-07-08T12:27:24+08:00",
+    "activePostCount": "1",
+    "eventType": "PeopleCounting",
+    "eventState": "active",
+    "eventDescription": "PeopleCounting alarm",
+    "channelName": "Camera 01",
+    "peopleCounting": {
+      "statisticalMethods": "realTime",
+      "RealTime": {
+        "time": "2024-07-08T12:27:24+08:00"
+      },
+      "enter": "16",
+      "exit": "10",
+      "duplicatePeople": "4",
+      "countingSceneMode": "entrance"
+    },
+    "isDataRetransmission": "false"
   },
   {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815192509",
-    "total_enter": 3,
-    "total_exit": 3,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
+    "timestamp": "20240815234004",
+    "@version": "2.0",
+    "@xmlns": "http://www.isapi.org/ver20/XMLSchema",
+    "ipAddress": "192.168.2.64",
+    "portNo": "8080",
+    "protocol": "HTTP",
+    "macAddress": "3c:1b:f8:c1:3a:6d",
+    "channelID": "1",
+    "dateTime": "2024-12-08T12:27:24+08:00",
+    "activePostCount": "1",
+    "eventType": "PeopleCounting",
+    "eventState": "active",
+    "eventDescription": "PeopleCounting alarm",
+    "channelName": "Camera 01",
+    "peopleCounting": {
+      "statisticalMethods": "realTime",
+      "RealTime": {
+        "time": "2024-12-08T12:27:24+08:00"
+      },
+      "enter": "16",
+      "exit": "10",
+      "duplicatePeople": "4",
+      "countingSceneMode": "entrance"
+    },
+    "isDataRetransmission": "false"
+  },
+  {
+    "timestamp": "20240816001159",
+    "@version": "2.0",
+    "@xmlns": "http://www.isapi.org/ver20/XMLSchema",
+    "ipAddress": "192.168.2.64",
+    "portNo": "8080",
+    "protocol": "HTTP",
+    "macAddress": "3c:1b:f8:c1:3a:6d",
+    "channelID": "1",
+    "dateTime": "2024-01-08T12:27:24+08:00",
+    "activePostCount": "1",
+    "eventType": "PeopleCounting",
+    "eventState": "active",
+    "eventDescription": "PeopleCounting alarm",
+    "channelName": "Camera 01",
+    "peopleCounting": {
+      "statisticalMethods": "realTime",
+      "RealTime": {
+        "time": "2024-01-08T12:27:24+08:00"
+      },
+      "enter": "16",
+      "exit": "10",
+      "duplicatePeople": "4",
+      "countingSceneMode": "entrance"
+    },
+    "isDataRetransmission": "false"
   }
 ]
