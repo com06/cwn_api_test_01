@@ -1,92 +1,25 @@
 [
   {
     "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815142140",
-    "last_count": 1,
+    "last_timestamp": "20240815192506",
+    "total_enter": 1,
+    "total_exit": 1,
     "start_time": "20240708102000",
     "end_time": "20240708103000"
   },
   {
     "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815142142",
-    "last_count": 2,
+    "last_timestamp": "20240815192507",
+    "total_enter": 2,
+    "total_exit": 2,
     "start_time": "20240708102000",
     "end_time": "20240708103000"
   },
   {
     "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815143024",
-    "last_count": 3,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815143043",
-    "last_count": 4,
-    "start_time": "202407081020",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815143721",
-    "last_count": 5,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "",
-    "last_timestamp": "20240815143757",
-    "last_count": 6,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815143937",
-    "last_count": 7,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815144628",
-    "last_count": 8,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815145142",
-    "last_count": 9,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815145212",
-    "last_count": 10,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815190934",
-    "last_count": 11,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815190936",
-    "last_count": 12,
-    "start_time": "20240708102000",
-    "end_time": "20240708103000"
-  },
-  {
-    "ip_address": "192.168.4.64",
-    "last_timestamp": "20240815191850",
-    "last_count": 13,
+    "last_timestamp": "20240815192509",
+    "total_enter": 3,
+    "total_exit": 3,
     "start_time": "20240708102000",
     "end_time": "20240708103000"
   }

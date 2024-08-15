@@ -17,6 +17,7 @@ class PersonCountRequest(BaseModel):
     start_time: str
     end_time: str
 
+# โหลดข้อมูลจากไฟล์ JSON
 def load_data():
     try:
         with open(DB_PATH, 'r') as f:
@@ -24,10 +25,12 @@ def load_data():
     except json.JSONDecodeError:
         return []
 
+# บันทึกข้อมูลลงไฟล์ JSON
 def save_data(data):
     with open(DB_PATH, 'w') as f:
         json.dump(data, f, indent=2)
 
+# ตรวจสอบความถูกต้องของ ip_address
 def validate_ip_address(ip_address):
     try:
         ipaddress.ip_address(ip_address)
@@ -35,6 +38,7 @@ def validate_ip_address(ip_address):
     except ValueError:
         return False
 
+# ตรวจสอบความถูกต้องของ datetime
 def validate_datetime(datetime_str, format="%Y%m%d%H%M%S"):
     try:
         datetime.strptime(datetime_str, format)
@@ -66,29 +70,33 @@ async def count_people(request: PersonCountRequest):
     # หาข้อมูลที่มี last_timestamp มากที่สุด
     latest_data = max(db_data, key=lambda x: x['last_timestamp'], default=None)
     
-    # 
-    last_count: int
+    # เพิ่ม - ลบ จำนวนทั้งเข้าและออกตรงนี้
+    total_enter: int
+    total_exit: int
     if latest_data:
-        last_count = latest_data["last_count"] + 1
+        total_enter = latest_data["total_enter"] + 1
+        total_exit = latest_data["total_exit"] + 1
     else:
-        last_count = 1
+        total_enter = 1
+        total_exit = 1
     
     # สร้าง transaction ใหม่
     new_transaction = {
         "ip_address": ip_address,
         "last_timestamp": datetime.now().strftime("%Y%m%d%H%M%S"),
-        "last_count": last_count,
+        "total_enter": total_enter,
+        "total_exit": total_exit,
         "start_time": start_time,
         "end_time": end_time
     }
     db_data.append(new_transaction)
 
-    # บันทึกข้อมูลใหม่
+    # บันทึกข้อมูลล่าสุด
     save_data(db_data)
 
-    # return JSONResponse(content={"total_count": camera_data["last_count"]})
+    # return JSONResponse
     return JSONResponse(content={
         "success": True, 
-        "total_enter": new_transaction["last_count"], 
-        "total_exit": new_transaction["last_count"]
+        "total_enter": new_transaction["total_enter"], 
+        "total_exit": new_transaction["total_exit"]
     })
