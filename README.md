@@ -2,6 +2,8 @@
 
 FastAPI เป็นอีกหนึ่งเฟรมเวิร์ก Python สำหรับสร้าง API ที่ได้รับความนิยม ด้วยความสามารถในการสร้าง API ที่มีประสิทธิภาพสูง รองรับการทำงานแบบ asynchronous และมาพร้อมกับฟีเจอร์ที่หลากหลาย ทำให้ FastAPI เป็นตัวเลือกที่ยอดเยี่ยม
 
+โดยโค้ดตัวอย่างนี้กล่าวถึงอาคารอัจฉริยะ ที่ติดตั้งกล้อง IP ไว้ที่ทางเข้าต่างๆ เพื่อคอยนับจำนวนคนที่เข้าและออกจากอาคาร
+
 ## Install FastAPI
 อย่างแรกก็ต้องติดตั้ง FastAPI ด้วยคำสั่งด้านล่างนี้
 
@@ -76,7 +78,7 @@ def validate_datetime(datetime_str, format="%Y%m%d%H%M%S"):
     except ValueError:
         return False
 ```
-ส่วนสุดท้าบสร้าง endpoint /count_people
+ส่วนสุดท้ายสร้าง endpoint /count_people
 ```
 @app.post("/count_people")
 async def count_people(request: PersonCountRequest):
@@ -133,4 +135,24 @@ async def count_people(request: PersonCountRequest):
         "total_exit": new_transaction["total_exit"]
     })
 ```
+## Document
+อีกหนึ่งจุดเด่นของ FastAPI ก็คือมี Interactive API docs ที่นำ Swagger UI เข้ามาจัดการให้ โดยไปที่ [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 
+## ทดสอบด้วย Posman
+ทำการทดสอบโดยการ POST call มาที่ http://127.0.0.1:8000/count_people และตั้งค่า body เป็น row
+```
+{
+    "ip_address": "192.168.2.64",
+    "start_time": "20240708102000",
+    "end_time": "20240708103000"
+}
+```
+ผลลัพธ์ที่ได้
+```
+{
+    "success": true,
+    "total_enter": 3,
+    "total_exit": 3
+}
+```
+โดยผลลัพธ์จะ +1 ใส่ total_enter และ total_exit ของ last_timestamp ล่าสุด โดยโค้ดชุดนี้ยังไม่ได้บอกถึงข้อมูลว่าคนที่เดินเข้าตึกมานั้น เป็นคนเดินเข้าหรือเดินออก
