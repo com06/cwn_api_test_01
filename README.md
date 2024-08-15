@@ -197,7 +197,37 @@ async def count_people(request: PersonCountRequest):
 อีกหนึ่งจุดเด่นของ FastAPI ก็คือมี Interactive API docs ที่นำ Swagger UI เข้ามาจัดการให้ โดยไปที่ http://127.0.0.1:8000/docs
 
 ## ทดสอบด้วย Postman
-ทำการทดสอบโดยการ POST call มาที่ http://127.0.0.1:8000/count_people และตั้งค่า body
+ทำการทดสอบโดยการ POST call มาที่ http://127.0.0.1:8000/count_people และตั้งค่า body เป็นรูปแบบ XML
+```
+<EventNotificationAlert version="2.0" xmlns="http://www.isapi.org/ver20/XMLSchema"> <ipAddress>192.168.2.64</ipAddress>
+<portNo>8080</portNo>
+<protocol>HTTP</protocol>
+<macAddress>3c:1b:f8:c1:3a:6d</macAddress>
+<channelID>1</channelID>
+<dateTime>2024-07-08T12:27:24+08:00</dateTime> <activePostCount>1</activePostCount>
+<eventType>PeopleCounting</eventType>
+<eventState>active</eventState>
+<eventDescription>PeopleCounting alarm</eventDescription> <channelName>Camera 01</channelName>
+<peopleCounting>
+<statisticalMethods>realTime</statisticalMethods>
+<RealTime>
+<time>2024-07-08T12:27:24+08:00</time>
+</RealTime>
+<enter>15</enter>
+<exit>14</exit>
+<duplicatePeople>4</duplicatePeople> <countingSceneMode>entrance</countingSceneMode>
+</peopleCounting>
+<isDataRetransmission>false</isDataRetransmission>
+</EventNotificationAlert>
+```
+ผลลัพธ์ที่ได้
+```
+{
+    "message": "Data received and saved"
+}
+```
+
+หลังจาก รับข้อมูล XML Event Notification มาแล้ว ก็สามารถ POST call ตรวจสอบมาที่ http://127.0.0.1:8000/count_people และตั้งค่า body (กรอก ip และช่วงเวลาให้ครอบคลุมข้อมูลที่มี)
 ```
 {
     "ip_address": "192.168.2.64",
@@ -213,4 +243,3 @@ async def count_people(request: PersonCountRequest):
     "total_exit": 3
 }
 ```
-โดยผลลัพธ์จะ +1 ใส่ total_enter และ total_exit ของ last_timestamp ล่าสุด โดยโค้ดชุดนี้ยังไม่ได้บอกถึงข้อมูลว่าคนที่เดินเข้าตึกมานั้น เป็นคนเดินเข้าหรือเดินออก
