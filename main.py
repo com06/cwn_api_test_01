@@ -110,6 +110,7 @@ async def count_people(request: PersonCountRequest):
         # อ่านข้อมูลจากไฟล์ JSON
         db_data = load_data()
 
+        # ตรวจสอบหา ip address ที่ไม่มีในฐานข้อมูล
         camera_data = [camera_ip for camera_ip in db_data if camera_ip['ipAddress'] == ip_address]
         if not camera_data:
             raise ValueError("Data not found")
@@ -126,7 +127,6 @@ async def count_people(request: PersonCountRequest):
             # แปลงกลับเป็นสตริงในรูปแบบใหม่
             dateTime_format_str = dt.strftime("%Y%m%d%H%M%S")
 
-            # if event['ipAddress'] == ip_address and start_time <= event_time <= end_time:
             if event['ipAddress'] == ip_address and start_time <= dateTime_format_str <= end_time:
                 total_enter += int(event['peopleCounting']['enter'])
                 total_exit += int(event['peopleCounting']['exit'])
