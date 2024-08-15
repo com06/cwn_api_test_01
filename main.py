@@ -3,7 +3,6 @@ from pydantic import BaseModel, ValidationError
 from datetime import datetime
 from fastapi.responses import JSONResponse
 from fastapi import Request
-# import xml.etree.ElementTree as ET
 
 app = fastapi.FastAPI()
 

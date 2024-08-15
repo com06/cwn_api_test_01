@@ -28,13 +28,11 @@ uvicorn main:app --reload
 ไฟล์ main.py จะประกอบไปด้วย
 การนำเข้าไลบรารีที่จำเป็น และ path ของไฟล์ json ที่เราจะนำมาเก็บข้อมูล
 ```
-import json
-import fastapi
-import ipaddress
+import json, fastapi, ipaddress, xmltodict
 from pydantic import BaseModel, ValidationError
 from datetime import datetime
 from fastapi.responses import JSONResponse
-from fastapi import HTTPException
+from fastapi import Request
 
 app = fastapi.FastAPI()
 
