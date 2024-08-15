@@ -28,18 +28,6 @@ def save_data(data):
     with open(DB_PATH, 'w') as f:
         json.dump(data, f, indent=2)
 
-def save_to_json(data):
-    with open(DB_PATH, 'r') as f:
-        try:
-            existing_data = json.load(f)
-        except json.JSONDecodeError:
-            existing_data = []
-
-    existing_data.append(data)
-
-    with open(DB_PATH, 'w') as f:
-        json.dump(existing_data, f, indent=2)
-
 # ตรวจสอบความถูกต้องของ ip_address
 def validate_ip_address(ip_address):
     try:
@@ -55,7 +43,8 @@ def validate_datetime(datetime_str, format="%Y%m%d%H%M%S"):
         return True
     except ValueError:
         return False
-
+    
+# ตรวจสอบ element ต่างๆ ใน XML
 def check_required_fields(data):
     required_fields = ['ipAddress', 'macAddress', 'channelID', 'eventType', 'eventState', 'channelName', 'peopleCounting.enter', 'peopleCounting.exit', 'peopleCounting.countingSceneMode']
 
