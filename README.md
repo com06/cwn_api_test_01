@@ -191,7 +191,8 @@ async def count_people(request: PersonCountRequest):
 ## ทดสอบด้วย Postman
 ทำการทดสอบโดยการ POST call มาที่ http://127.0.0.1:8000/count_people และตั้งค่า body เป็นรูปแบบ XML
 ```
-<EventNotificationAlert version="2.0" xmlns="http://www.isapi.org/ver20/XMLSchema"> <ipAddress>192.168.2.64</ipAddress>
+<EventNotificationAlert version="2.0" xmlns="http://www.isapi.org/ver20/XMLSchema">
+<ipAddress>192.168.2.64</ipAddress>
 <portNo>8080</portNo>
 <protocol>HTTP</protocol>
 <macAddress>3c:1b:f8:c1:3a:6d</macAddress>
