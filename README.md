@@ -15,7 +15,7 @@ pip intsall fastapi
 ```
 pip install uvicorn
 ```
-โมดูล xmltodict เป็นโมดูลสำหรับช่วยให้สามารถทำงานกับ XML ได้สะดวกยิ่งขึ้น
+โมดูล xmltodict เป็นโมดูลสำหรับช่วยให้สามารถทำงานกับ XML ได้สะดวกยิ่งขึ้น  
 สามารถติดตั้งได้โดยใช้คำสั่ง pip:
 ```
 pip install xmltodict
